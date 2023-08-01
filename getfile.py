@@ -26,12 +26,14 @@ def getFile(file) -> object:
    if file.startswith("http"):
       try:
          r = requests.get(file)
-         print(r)
+         return r
       except FileNotFoundError as e:
          logging.error("File not found:" + e)
+
    else:
       try:
          r_wrapper = open(file, "r")
          r = r_wrapper.read()
+         return r
       except FileNotFoundError as e:
          logging.error("File not found:" + e)
