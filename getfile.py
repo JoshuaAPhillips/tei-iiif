@@ -31,7 +31,7 @@ def getFile(file) -> object:
          logging.error("File not found:" + e)
    else:
       try:
-         r = open(file, "r")
-         print(r)
+         r_wrapper = open(file, "r")
+         r = r_wrapper.read()
       except FileNotFoundError as e:
          logging.error("File not found:" + e)
