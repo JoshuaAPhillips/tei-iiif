@@ -24,6 +24,9 @@ def getFile(file) -> object:
    Returns file from local or remote store
    """
    if file.startswith("http"):
+      """
+      Uses requests module to fetch file from remote source
+      """
       try:
          r = requests.get(file)
          return r
@@ -31,6 +34,9 @@ def getFile(file) -> object:
          logging.error("File not found:" + e)
 
    else:
+      """
+      Opens file from local source
+      """
       try:
          r_wrapper = open(file, "r")
          r = r_wrapper.read()
