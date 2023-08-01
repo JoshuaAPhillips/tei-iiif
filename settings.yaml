@@ -1,3 +1,2 @@
-base_path: "" # Base path for requests. This can be a URI (e.g.: https://foo.bar/baz/xml-files/) or local (e.g.: /home/user/xml-files/).
-file_name: "sys.argv[-1]" # File name for requests. This defaults to sys.argv[-1] (i.e.: the last argument passed to the script in the command line) but  can be substituted for a list of files (e.g.: ["file1.xml", "file2.xml", "file3.xml"]).
-
+base_path: "https://raw.githubusercontent.com/JoshuaAPhillips/digital-anon/main/transcriptions/" # Base path for requests. This can be a URI (e.g.: https://foo.bar/baz/xml-files/) or local (e.g.: /home/user/xml-files/).
+#file_name: "sys.argv[-1]" # Need to work out logic for this... It's hardcoded as sys.argv[-1] for now
