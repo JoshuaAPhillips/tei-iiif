@@ -9,7 +9,7 @@ def settings() -> dict:
   try:
     with open("settings.yaml", 'r') as f:
         settings = yaml.load(f, Loader=yaml.FullLoader)
-        
+
   except FileNotFoundError as e:
      logging.ERROR(e)
 
