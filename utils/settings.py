@@ -10,7 +10,6 @@ def settings() -> dict:
     with open("settings.yaml", 'r') as f:
         settings = yaml.load(f, Loader=yaml.FullLoader)
         
-    print(settings)
   except FileNotFoundError as e:
      logging.ERROR(e)
 
