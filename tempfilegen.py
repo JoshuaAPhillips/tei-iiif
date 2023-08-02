@@ -3,6 +3,7 @@ from getfile import fileName, getFile
 from xmlparser import getRoot, divList, metadata
 from lxml import etree
 import os
+import logging
 
 settings = settings()
 
@@ -19,6 +20,7 @@ def tempDir() -> None:
   
   try:
     os.mkdir(settings["temp_dir"])
+    logging.info("Created temporary directory at {}".format(settings["temp_dir"]))
   except FileExistsError:
     pass
 
@@ -31,5 +33,6 @@ def tempFileGen(div_list) -> None:
     filename = "./temp/{}-{}.xml".format(metadata_dict["idno"], idx + 1)
     with open(filename, "w") as f:
       f.write(etree.tostring(div, encoding="unicode"))
+    logging.info("Created temporary file at {}".format(filename))
 
 tempFileGen(div_list)
