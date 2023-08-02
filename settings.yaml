@@ -4,6 +4,10 @@
 temp_dir: "./temp/"
 base_path: "https://raw.githubusercontent.com/JoshuaAPhillips/digital-anon/main/transcriptions/" # Base path for requests. This can be a URI (e.g.: https://foo.bar/baz/xml-files/) or local (e.g.: /home/user/xml-files/).
 
+request_params:
+  username: null
+  password: null
+
 namespace: {'tei': 'http://www.tei-c.org/ns/1.0'} #Specify XML namespace. Defaults to TEI namespace
 
 logging:

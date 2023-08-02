@@ -28,7 +28,7 @@ def getFile(file) -> object:
       Uses requests module to fetch file from remote source
       """
       try:
-         r = requests.get(file)
+         r = requests.get(file, auth=(settings["request_params"]["username"], settings["request_params"]["password"]))
          if r.status_code == 200:
             return r
          else:
