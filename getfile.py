@@ -29,9 +29,12 @@ def getFile(file) -> object:
       """
       try:
          r = requests.get(file)
-         return r
-      except FileNotFoundError as e:
-         logging.error("File not found:" + e)
+         if r.status_code == 200:
+            return r
+         else:
+            logging.error("Error fetching file:" + r.status_code)
+      except Exception as e:
+         logging.error("Exception:" + e)
 
    else:
       """
