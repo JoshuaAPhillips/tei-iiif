@@ -1,8 +1,12 @@
 # Stores settings for tei-iiif converter
 %YAML 1.2
 ---
-temp_dir: "./temp/"
-base_path: "https://raw.githubusercontent.com/JoshuaAPhillips/digital-anon/main/transcriptions/" # Base path for requests. This can be a URI (e.g.: https://foo.bar/baz/xml-files/) or local (e.g.: /home/user/xml-files/).
+
+temp_dir: './temp/'
+
+base_path: 'https://raw.githubusercontent.com/JoshuaAPhillips/digital-anon/main/transcriptions/' # Base path for requests. This can be a URI or local. If local, it must be a path relative to the directory in which the script is run. If local, it must end with a trailing slash.
+
+manifest_store: './manifests' # Path at which you intend to store manifests. This forms the base ID for manifests and must resolve in order for annotationPage manifests to correctly link to the parent presentation manifest.
 
 request_params:
   username: null
@@ -11,13 +15,14 @@ request_params:
 namespace: {'ns': 'http://www.tei-c.org/ns/1.0'} #Specify XML namespace. Defaults to TEI namespace
 
 logging:
-  level: "DEBUG" # Default "INFO". Set to "DEBUG" for more verbose logging
-  file: "ext://sys.stdout" # Defaults to stdout. Set to a file path to log to a file.
+  level: 'DEBUG' # Default 'INFO'. Set to 'DEBUG' for more verbose logging
+  file: 'ext://sys.stdout' # Defaults to stdout. Set to a file path to log to a file.
 
-
-
-
+regex:
+  pattern_to_replace: '/(\\d+),' # Regex pattern for sanitising image URIs. If set to null, no sanitisation will be performed. If set to a regex pattern, the pattern will be replaced with the value of 'replace' below.
+  replacement_pattern: '#xywh=(\\d+),'
+  trailing_pattern: '/full/0/default.tif' # Regex pattern for stripping unwanted trailing characters from image URIs.
 
 
 # ../digital-anon/transcriptions/
-# file_name: "sys.argv[-1]" # Need to work out logic for this... It's hardcoded as sys.argv[-1] for now
+# file_name: 'sys.argv[-1]' # Need to work out logic for this... It's hardcoded as sys.argv[-1] for now
