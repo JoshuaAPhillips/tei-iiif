@@ -36,7 +36,7 @@ def divList(root) -> list:
   """
 
   div_list = []
-  divs = root.findall('.//tei:div', namespaces=settings["namespace"])
+  divs = root.findall('.//ns:div', namespaces=settings["namespace"])
 
   try:
     for div in divs:
@@ -51,9 +51,9 @@ def metadata(root) -> dict:
   Returns dictionary of metadata for later use. This is a minimal dictionary that provides data necessary for the module's basic functionality, and can be expanded as needed.
   """
   metadata = {
-    "title": root.find('.//tei:title', namespaces=settings["namespace"]).text,
-    "idno": root.find('.//tei:idno', namespaces=settings["namespace"]).text,
-    "author": root.find('.//tei:author', namespaces=settings["namespace"]).text
+    "title": root.find('.//ns:title', namespaces=settings["namespace"]).text,
+    "idno": root.find('.//ns:idno', namespaces=settings["namespace"]).text,
+    "author": root.find('.//ns:author', namespaces=settings["namespace"]).text
   }
   
   return metadata

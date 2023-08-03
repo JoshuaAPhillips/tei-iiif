@@ -8,7 +8,7 @@ request_params:
   username: null
   password: null
 
-namespace: {'tei': 'http://www.tei-c.org/ns/1.0'} #Specify XML namespace. Defaults to TEI namespace
+namespace: {'ns': 'http://www.tei-c.org/ns/1.0'} #Specify XML namespace. Defaults to TEI namespace
 
 logging:
   level: "DEBUG" # Default "INFO". Set to "DEBUG" for more verbose logging
