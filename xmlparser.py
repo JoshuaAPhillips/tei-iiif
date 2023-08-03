@@ -9,7 +9,7 @@ r = getFile(filename)
 
 def getRoot(r) -> object:
   """
-  Returns root object of XML file
+  Uses lxml to return `root` object of XML file
   """
   if filename.startswith("http"):
     try:
@@ -32,7 +32,7 @@ def getRoot(r) -> object:
 def divList(root) -> list:
 
   """
-  returns master list of <div>s for later use
+  Uses lxml to parse `root` and return master list of <div>s for later use
   """
 
   div_list = []

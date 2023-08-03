@@ -7,7 +7,7 @@ settings = settings()
 
 def fileName() -> str:
     """
-    Gets filename from command line argument and path specified in settings.yaml
+    Returns `filename` from command line argument and path specified in settings.yaml
     - (TODO: work on way to accept list of files and iterate through them)
     """
     base_url = settings["base_path"]
@@ -21,12 +21,15 @@ def fileName() -> str:
 
 def getFile(file) -> object:
    """
-   Returns file from local or remote store
+   Returns `file` from local or remote store for parsing in `xmlparser.py`
+   - Uses requests library to fetch remote files
+      - Uses basic auth to fetch remote files: if auth required, set username and password in settings.yaml
+      - If auth not required, leave username and password blank
+      - If more advanced authentication systems such as OAuth are required, see https://requests.readthedocs.io/en/latest/user/authentication/ for implementation
+   - Uses open() to fetch local files
    """
+   
    if file.startswith("http"):
-      """
-      Uses requests module to fetch file from remote source
-      """
       try:
          r = requests.get(file, auth=(settings["request_params"]["username"], settings["request_params"]["password"]))
          if r.status_code == 200:
@@ -37,9 +40,6 @@ def getFile(file) -> object:
          logging.error("Exception:" + e)
 
    else:
-      """
-      Opens file from local source
-      """
       try:
          r_wrapper = open(file, "r")
          r = r_wrapper.read()

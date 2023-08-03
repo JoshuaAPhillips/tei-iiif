@@ -26,7 +26,7 @@ def tempDir() -> None:
 
 def tempFileGen(div_list) -> None:
   """
-  Generates temporary files for each <div> in the master list
+  Generates temporary files for each `<div>` in the master list
   """
   tempDir()
   for idx, div in enumerate(div_list):
