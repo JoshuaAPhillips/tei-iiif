@@ -28,16 +28,16 @@ def getFile(file) -> object:
       - If more advanced authentication systems such as OAuth are required, see https://requests.readthedocs.io/en/latest/user/authentication/ for implementation
    - Uses open() to fetch local files
    """
-   
+
    if file.startswith("http"):
       try:
          r = requests.get(file, auth=(settings["request_params"]["username"], settings["request_params"]["password"]))
          if r.status_code == 200:
             return r
          else:
-            logging.error("Error fetching file:" + r.status_code)
+            logging.error(r.status_code)
       except Exception as e:
-         logging.error("Exception:" + e)
+         logging.error(e)
 
    else:
       try:
@@ -45,4 +45,4 @@ def getFile(file) -> object:
          r = r_wrapper.read()
          return r
       except FileNotFoundError as e:
-         logging.error("File not found:" + e)
+         logging.error(e)
