@@ -18,6 +18,7 @@ metadata = metadata(root)
 idno = metadata["idno"]
 temp_dir = settings["temp_dir"]
 manifest_store = settings["manifest_store"]
+trailing_pattern = settings["regex"]["trailing_pattern"]
 
 def dirGen() -> None:
   """
@@ -59,8 +60,7 @@ def manifestGen(idno, temp_dir, manifest_store) -> list:
         inner_counter = 1
         for key, value in zip(keys, values):
 
-          keySanitiser = lambda key: re.sub(r'(/iiif/2/[^/]+/[^/]+)/([^/]+/full/0/default.tif)$', r'\1#xywh=\2', key).strip('/full/0/default.tif')
-
+          keySanitiser = lambda key: re.sub(r'/(\d+),', r'#xywh=\1,', key).strip(trailing_pattern)
 
           annotation_individual = {
             "id": manifest_store + f"/{idno}-annotation#{inner_counter}.json",
