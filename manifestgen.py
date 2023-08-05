@@ -27,8 +27,9 @@ def dirGen() -> None:
 
   try:
     os.mkdir(f'./{idno}-manifests')
-  except FileExistsError:
-    pass
+    logging.debug(f'Created directory at ./{idno}-manifests')
+  except FileExistsError as e:
+    logging.debug(str(e) + ' directory already exists. Continuing...', exc_info=True)
 
 def manifestGen(idno, temp_dir, manifest_store) -> list:
   """
@@ -77,10 +78,11 @@ def manifestGen(idno, temp_dir, manifest_store) -> list:
           inner_counter += 1
           items_list.append(annotation_individual)
         
-
         manifest_list.append(annotation_page)
 
-    logging.info(f'Generating IIIF AnnotationPage manifests for {filename}...')
+    for file in temp_dir:
+      if file.endswith('.json'):
+        logging.info(f'Generating IIIF AnnotationPage manifests for {filename}...')
 
   return manifest_list
 
@@ -89,4 +91,7 @@ def jsonSave(manifest_list, idno) -> None:
       with open(f"./{idno}-manifests/{idno}-{file_counter +1}-annotations.json", "w") as jsonfile:
       
         json.dump(annotation_page, jsonfile, indent=4)
-    logging.info(f'Saving {idno} manifests to JSON...')
+    
+    for file in temp_dir:
+      if file.endswith('.json'):
+        logging.info(f'Saving {idno} manifests to JSON...')

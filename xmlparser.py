@@ -14,20 +14,20 @@ def getRoot(r) -> object:
   if filename.startswith("http"):
     try:
       root = etree.fromstring(r.content)
-      logging.info("Parsing XML from remote source")
+      logging.debug("Parsing XML from remote source")
       return root
     
     except etree.XMLSyntaxError as e:
-      logging.error(e)
+      logging.error(str(e) + f" : unable to parse XML", exc_info=True)
 
   else:
     try:
       root = etree.parse(r)
-      logging.info("Parsing XML from local source")
+      logging.debug("Parsing XML from local source")
       return root
     
     except etree.XMLSyntaxError as e:
-      logging.error(e)
+      logging.error(str(e) + f" : unable to parse XML", exc_info=True)
 
 def divList(root) -> list:
 
@@ -41,9 +41,11 @@ def divList(root) -> list:
   try:
     for div in divs:
       div_list.append(div)
+      
   except AttributeError as e:
-    logging.error(e)
+    logging.error(e, exc_info=True)
 
+  logging.debug('Created master list of <div>s for iteration in further functions')
   return div_list
 
 def metadata(root) -> dict:
@@ -55,5 +57,7 @@ def metadata(root) -> dict:
     "idno": root.find('.//ns:idno', namespaces=settings["namespace"]).text,
     "author": root.find('.//ns:author', namespaces=settings["namespace"]).text
   }
+
+  logging.debug('Created metadata dictionary for later use')
   
   return metadata

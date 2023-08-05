@@ -1,0 +1,82 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "./manifests/annotations/m48-annotations/m48-2-annotations.json",
+    "type": "AnnotationPage",
+    "items": [
+        {
+            "id": "./manifests/m48-annotation#1.json",
+            "type": "Annotation",
+            "motivation": "commenting",
+            "target": "https://llkn576nqxepo6yucgfh2nl2ea0kkigc.lambda-url.eu-west-2.on.aws/iiif/2/m48/m48-1#xywh=920,158,120,136",
+            "body": {
+                "type": "TextualBody",
+                "language": "en",
+                "format": "text/html",
+                "value": [
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">i</l>\n        "
+                ]
+            }
+        },
+        {
+            "id": "./manifests/m48-annotation#2.json",
+            "type": "Annotation",
+            "motivation": "commenting",
+            "target": "https://llkn576nqxepo6yucgfh2nl2ea0kkigc.lambda-url.eu-west-2.on.aws/iiif/2/m48/m48-1#xywh=1104,202,260,152",
+            "body": {
+                "type": "TextualBody",
+                "language": "en",
+                "format": "text/html",
+                "value": [
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">For many centuries \n            <choice>\n              <corr>after</corr>\n              <sic>afte</sic>\n            </choice> Britain became an island \"</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">the <rs type=\"person\" ref=\"../resources/annotations.xml#psn-gtre\" key=\"Trevelyan, George\">historian</rs> says, \"the untamed forest was king.\"</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">He goes on to say that <del>a</del>millions of birds, perched on</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">the top of those matted branches, sang their choruses.</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">Onl<add place=\"inline\">y</add> the skin clad hunters in the clearings heard the song.</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">The tree \n            <choice>\n              <corr>had</corr>\n              <sic>ha </sic>\n            </choice> to be felled; and a hut made from its</l>\n        ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">branches , before the human voice sang too.</l>\n      "
+                ]
+            }
+        },
+        {
+            "id": "./manifests/m48-annotation#3.json",
+            "type": "Annotation",
+            "motivation": "commenting",
+            "target": "https://llkn576nqxepo6yucgfh2nl2ea0kkigc.lambda-url.eu-west-2.on.aws/iiif/2/m48/m48-1#xywh=1012,1162,1212,444",
+            "body": {
+                "type": "TextualBody",
+                "language": "en",
+                "format": "text/html",
+                "value": [
+                    "<quote xmlns=\"http://www.tei-c.org/ns/1.0\" source=\"#\" rend=\"block\">\n            <l>By a bank as I lay</l>\n            <l>Musing myself alone, <del hand=\"ms\">j</del>\n              <add place=\"above\">h</add>ey ho!</l>\n            <l>A birdes voice</l>\n            <l>Did me rejoice,</l>\n            <l>Singing before the day</l>\n            <l>And me thought in her lay</l>\n            <l>She said, winter was past, hey ho!</l>\n          </quote>\n        "
+                ]
+            }
+        },
+        {
+            "id": "./manifests/m48-annotation#4.json",
+            "type": "Annotation",
+            "motivation": "commenting",
+            "target": "https://llkn576nqxepo6yucgfh2nl2ea0kkigc.lambda-url.eu-west-2.on.aws/iiif/2/m48/m48-1#xywh=734,1608,1944,1712",
+            "body": {
+                "type": "TextualBody",
+                "language": "en",
+                "format": "text/html",
+                "value": [
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\"><del>The first songs are out of door songs; because there</del></l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\"><del>was no comfort indoors, little light, and no books.</del></l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">The voice that \n            <choice>\n              <sic>brok</sic>\n              <corr>broke</corr>\n            </choice> the\n            <choice>\n              <sic>silnec</sic>\n              <corr>silence</corr>\n            </choice> of the forests was <del>like a</del></l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\"><del>birds voice, singing out of doors. It was</del> the voice of</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\"><rs type=\"person\" ref=\"../resources/annotations.xml#psn-anon\">Anon</rs>. <del>He had no comfort indoors, little light</del></l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\"><del>and no books.</del> He had \n            <choice>\n              <sic>n</sic>\n              <corr>no</corr>\n            </choice> name. Some one heard the song</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">and \n            <choice>\n              <sic>rmember d</sic>\n              <corr>remembered</corr>\n            </choice> it, for it was later written down. <del hand=\"ms\">The</del><add place=\"above\">Thus</add>the singer</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">had his audience <del>thus</del>; but the audience was so little</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">interested in his name that he never thought to give it.</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">The audience took part <del>too</del> in the song. <quote source=\"#\" rend=\"inline\">\"Terly, terlow\"</quote></l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">they sang: and <quote source=\"#\" rend=\"inline\">\"By, by lullay\"</quote> filling in \n            <choice>\n              <sic>th </sic>\n              <corr>the</corr>\n            </choice> pause<del>,</del></l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">helping out the <add place=\"above\">larger</add>meaning.<add hand=\"ms\" place=\"inline\">[</add><rs type=\"person\" ref=\"../resources/annotations.xml#psn-anon\" key=\"Anon\">Anon</rs> sings because spring has</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">come; or winter is gone; \n            <choice>\n              <sic>b cause</sic>\n              <corr>because</corr>\n            </choice> he loves; because he</l>\n          ",
+                    "<l xmlns=\"http://www.tei-c.org/ns/1.0\">is hungry; or lustful; or merry.<add place=\"inline\" hand=\"ms\">]</add> Everybody shares the</l>\n        "
+                ]
+            }
+        }
+    ]
+}

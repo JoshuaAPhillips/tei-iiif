@@ -34,4 +34,4 @@ def divJson(temp_file_dir=settings["temp_dir"]) -> None:
 
         with open(f"{f}.json", "w") as dictfile:
           json.dump(div_dict, dictfile, indent=4)
-          logging.info(f"Created JSON file at {f}.json")
+          logging.debug(f"Created temporary JSON file at {f}.json")

@@ -17,7 +17,7 @@ def fileName() -> str:
       file = base_url + filename
       return file
     else:
-       logging.error('Check "base_path" and "file_name" are set')
+       logging.error('Check "base_path" and "file_name" are set', exc_info=True)
 
 def getFile(file) -> object:
    """
@@ -33,16 +33,20 @@ def getFile(file) -> object:
       try:
          r = requests.get(file, auth=(settings["request_params"]["username"], settings["request_params"]["password"]))
          if r.status_code == 200:
+            logging.debug(f"Successfully fetched {file} from remote store")
             return r
          else:
             logging.error(r.status_code)
       except Exception as e:
-         logging.error(e)
+         logging.error(e, exc_info=True)
+         logging.error(f"Failed to fetch {file} from remote store. Quitting...")
 
    else:
       try:
          r_wrapper = open(file, "r")
          r = r_wrapper.read()
+         logging.debug(f"Successfully fetched {file} from local store")
          return r
       except FileNotFoundError as e:
-         logging.error(e)
+         logging.error(e, exc_info=True)
+         logging.error(f"Failed to fetch {file} from local store. Quitting...")
