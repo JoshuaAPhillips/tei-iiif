@@ -1,6 +1,0 @@
-{
-    "@context": "http://iiif.io/api/presentation/3/context.json",
-    "id": "./manifests/annotations/m48-annotations/m48-8-annotations.json",
-    "type": "AnnotationPage",
-    "items": []
-}
