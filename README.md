@@ -1,4 +1,4 @@
-# tei-iiif
+# TEI-IIIF Converter
 
 ## Introduction
 TEI-IIIF turns angle brackets into curly brackets. 
