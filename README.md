@@ -12,8 +12,9 @@ TEI-IIIF generates a `.json` manifest for each `<div>` in a given XML file. With
 TK - need to actually work this out.
 
 ## Basic use
-- TEI-IIIF runs from the command line. TK - need to work this out
-- Settings can be found in `settings.yaml`. words to the effect of specifying `base_path`...
+- Settings can be found in `settings.yaml`. Specify the `base_url` where you are hosting your XML. This can be either a URI (e.g. `https://foo.bar/baz/transcriptions/`) or a local source (e.g. `.projects/foo-bar/transcriptions`). Once this has been set, TEI-IIIF can be run from the command line, with the file you wish to convert passed as an argument:
+
+`python3 tei_iiif -m transcription.xml`
 
 ## Considerations
 - Because TEI-IIIF uses `etree.tostring` to produce the text for annotations, it captures     both tags and text and replicates them. Depending on the input XML, the manifests it outputs may need to be sanitised in order to be used in production, or you may need to sanitise or simplify the XML prior to processing. As use cases can differ dramatically from project to project, TEI-IIIF does not attempt to sanitise output body text.
