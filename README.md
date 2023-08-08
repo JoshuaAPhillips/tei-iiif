@@ -3,7 +3,7 @@
 ## Introduction
 TEI-IIIF turns angle brackets into curly brackets. 
 
-To put it in more descriptive terms, it is a Python CLI application that pulls data from [TEI](https://tei-c.org) XML to conformant [IIIF](https://iiif.io) Annotation manifests, as described in the [IIIF Presentation API 3.0](https://iiif.io/api/presentation/3.0/#56-annotation).
+To put it in more descriptive terms, it is a Python CLI application that pulls data from [TEI](https://tei-c.org) XML and transforms to conformant [IIIF](https://iiif.io) Annotation manifests, as described in the [IIIF Presentation API 3.0](https://iiif.io/api/presentation/3.0/#56-annotation).
 
 TEI-IIIF generates a `.json` manifest for each `<div>` in a given XML file. Within each `<div>` it targets `<p>` elements with a `facs` attribute, which are used as `target` values in the output manifests. It uses `lxml`'s `etree.tostring` method to pull the children of targeted `<p>` elements, saving them as the `value` for that given target. 
 
