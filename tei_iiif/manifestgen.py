@@ -72,7 +72,7 @@ def manifestGen(idno, temp_dir, manifest_store) -> list:
               "type": "TextualBody",
               "language": "en",
               "format": "text/html",
-              "value": value
+              "value": [value.strip() for value in value]
             }
           }
           inner_counter += 1
