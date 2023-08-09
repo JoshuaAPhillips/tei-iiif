@@ -18,3 +18,6 @@ def test_filename_fail(get_settings, monkeypatch):
     monkeypatch.setattr(sys, "argv", ["fileName", "file.xml"])
     file = fileName()
     assert file is None
+
+def test_getfile_pass(getsettings, monkeypatch):
+    pass
