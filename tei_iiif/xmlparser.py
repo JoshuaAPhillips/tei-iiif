@@ -1,7 +1,7 @@
 from lxml import etree
 import logging
-from getfile import fileName, getFile
-from utils.settings import settings
+from .getfile import fileName, getFile
+from .utils.settings import settings
 
 settings = settings()
 filename = fileName()

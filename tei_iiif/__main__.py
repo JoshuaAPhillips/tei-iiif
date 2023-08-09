@@ -1,11 +1,11 @@
 import logging
-from utils.settings import settings
-from utils.cleanup import dirCleaner
-from getfile import fileName, getFile
-from xmlparser import getRoot, divList, metadata
-from tempfilegen import tempFileGen
-from divjson import divJson
-from manifestgen import manifestGen, jsonSave
+from .utils.settings import settings
+from .utils.cleanup import dirCleaner
+from .getfile import fileName, getFile
+from .xmlparser import getRoot, divList, metadata
+from .tempfilegen import tempFileGen
+from .divjson import divJson
+from .manifestgen import manifestGen, jsonSave
 
 settings = settings()
 temp_dir = settings["temp_dir"]

@@ -3,9 +3,9 @@ import os
 import re
 import logging
 import natsort
-from getfile import fileName, getFile
-from xmlparser import getRoot, divList, metadata
-from utils.settings import settings
+from .getfile import fileName, getFile
+from .xmlparser import getRoot, divList, metadata
+from .utils.settings import settings
 from pprint import pp
 
 settings = settings()

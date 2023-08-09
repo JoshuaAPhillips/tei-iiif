@@ -1,7 +1,7 @@
 import sys
 import logging
 import requests
-from utils.settings import settings
+from .utils.settings import settings
 
 settings = settings()
 

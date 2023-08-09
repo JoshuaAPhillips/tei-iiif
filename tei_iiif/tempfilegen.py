@@ -1,6 +1,6 @@
-from utils.settings import settings
-from getfile import fileName, getFile
-from xmlparser import getRoot, divList, metadata
+from .utils.settings import settings
+from .getfile import fileName, getFile
+from .xmlparser import getRoot, divList, metadata
 from lxml import etree
 import os
 import logging

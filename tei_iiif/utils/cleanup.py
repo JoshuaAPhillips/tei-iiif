@@ -1,4 +1,4 @@
-from utils.settings import settings
+from .settings import settings
 import logging
 import os
 import shutil

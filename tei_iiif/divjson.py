@@ -2,7 +2,7 @@ import json
 import os
 import logging
 from lxml import etree
-from utils.settings import settings
+from .utils.settings import settings
 
 settings = settings()
 
