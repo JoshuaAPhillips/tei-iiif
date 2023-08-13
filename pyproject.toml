@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "TEI-IIIF"
-version = "0.1.10"
+version = "0.9"
 authors = [
   { name="Joshua Phillips", email="joshua.phillips@ell.ox.ac.uk" },
 ]
@@ -16,7 +16,22 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+  "lxml",
+  "natsort",
+  "pyyaml",
+  "requests"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/joshuaAPhillips/tei-iiif"
 "Bug Tracker" = "https://github.com/joshuaAPhillips/tei-iiif/issues"
+
+[tools.setuptools]
+include-package-data = true
+
+[tools.setuptools.packages.find]
+where = "tei_iiif"
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]
