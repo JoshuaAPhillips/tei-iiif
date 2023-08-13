@@ -1,5 +1,7 @@
 # TEI-IIIF Converter
 
+![Static Badge](https://img.shields.io/badge/BETA%20-%200.9.0)
+
 ## Introduction
 TEI-IIIF turns angle brackets into curly brackets. 
 
@@ -12,12 +14,13 @@ TEI-IIIF generates a `.json` manifest for each `<div>` in a given XML file. With
 TK - need to actually work this out.
 
 ## Basic use
-- Settings can be found in `settings.yaml`. Specify the `base_url` where you are hosting your XML. This can be either a URI (e.g. `https://foo.bar/baz/transcriptions/`) or a local source (e.g. `.projects/foo-bar/transcriptions`). Once this has been set, TEI-IIIF can be run from the command line, with the file you wish to convert passed as an argument:
+- Settings can be found in `settings.yaml`. If you have installed `tei_iiif` in a virtual environment using `venv`, you can find `settings.yaml` in `your_directory/venv/lib/python[version]/site-packages/tei-iiif`.
+- Specify the `base_url` where you are hosting your XML. This can be either a URI (e.g. `https://foo.bar/baz/transcriptions/`) or a local source (e.g. `.projects/foo-bar/transcriptions`). Once this has been set, TEI-IIIF can be run from the command line, with the file you wish to convert passed as an argument:
 
 `python3 tei_iiif -m transcription.xml`
 
 ## Considerations
-- Because TEI-IIIF uses `etree.tostring` to produce the text for annotations, it captures     both tags and text and replicates them. Depending on the input XML, the manifests it outputs may need to be sanitised in order to be used in production, or you may need to sanitise or simplify the XML prior to processing. As use cases can differ dramatically from project to project, TEI-IIIF does not attempt to sanitise output body text.
+- Because TEI-IIIF uses `etree.tostring` to produce the text for annotations, it captures both tags and text and replicates them. Depending on the input XML, the manifests it outputs may need to be sanitised in order to be used in production, or you may need to sanitise or simplify the XML prior to processing. As use cases can differ dramatically from project to project, TEI-IIIF does not attempt to sanitise output body text.
 - However, TEI-IIIF does include regex to sanitise `facs` attributes such that they use `#xywh=` formatting for image selectors. This can be changed according to your use case in `settings.py`
  - By default TEI-IIIF assumes you have XML structured in a format roughly equivalent to the following:
 
@@ -39,9 +42,6 @@ TK - need to actually work this out.
 	</p>
 </div>
 ```
+
 - If your XML differs dramatically from the below then you can change the XPath in `xmlparser.py` and `divjson.py`.
 - TEI-IIIF defaults to the [base TEI namespace URI](http://www.tei-c.org/ns/1.0). This can be changed in `settings.yaml`.
-
-## Testing
-
-Um...
