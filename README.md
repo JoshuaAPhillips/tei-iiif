@@ -1,7 +1,5 @@
 # TEI-IIIF Converter
 
-![Static Badge](https://img.shields.io/badge/BETA%20-%200.9.0)
-
 ## Introduction
 TEI-IIIF turns angle brackets into curly brackets. 
 
@@ -11,11 +9,11 @@ TEI-IIIF generates a `.json` manifest for each `<div>` in a given XML file. With
 
 ## Installation
 
-TK - need to actually work this out.
+`pip install TEI-IIIF`
 
 ## Basic use
 - Settings can be found in `settings.yaml`. If you have installed `tei_iiif` in a virtual environment using `venv`, you can find `settings.yaml` in `your_directory/venv/lib/python[version]/site-packages/tei-iiif`.
-- Specify the `base_url` where you are hosting your XML. This can be either a URI (e.g. `https://foo.bar/baz/transcriptions/`) or a local source (e.g. `.projects/foo-bar/transcriptions`). Once this has been set, TEI-IIIF can be run from the command line, with the file you wish to convert passed as an argument:
+- Specify the `base_url` where you are hosting your XML. This can be either a URI (e.g. `https://foo.bar/baz/transcriptions/`) or a local source (e.g. `./projects/foo-bar/transcriptions/`). In both cases, remember the trailing `/`. Once this has been set, TEI-IIIF can be run from the command line, with the file you wish to convert passed as an argument:
 
 `python3 tei_iiif -m transcription.xml`
 
