@@ -1,0 +1,44 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: TEI-IIIF
+message: >-
+  TEI-IIIF converts is a Python CLI application that pulls
+  data from TEI XML and transforms to conformant IIIF
+  Annotation manifests, as described in the IIIF
+  Presentation API 3.0.
+type: software
+authors:
+  - given-names: Joshua
+    family-names: Phillips
+    email: joshua.phillips@ell.ox.ac.uk
+    affiliation: University of Oxford
+    orcid: 'https://orcid.org/0000-0002-1714-9763'
+repository-code: 'https://github.com/JoshuaAPhillips/tei-iiif'
+abstract: >-
+  TEI-IIIF turns angle brackets into curly brackets.
+
+
+  To put it in more descriptive terms, it is a Python CLI
+  application that pulls data from TEI XML and transforms to
+  conformant IIIF Annotation manifests, as described in the
+  IIIF Presentation API 3.0.
+
+
+  TEI-IIIF generates a .json manifest for each <div> in a
+  given XML file. Within each <div> it targets <p> elements
+  with a facs attribute, which are used as target values in
+  the output manifests. It uses lxml's etree.tostring method
+  to pull the children of targeted <p> elements, saving them
+  as the value for that given target.
+keywords:
+  - tei
+  - iiif
+  - annotation
+  - digital humanities
+  - xml
+license: Apache-2.0
+commit: 8a65932
+version: v0.9.1
+date-released: '2023-08-10'
