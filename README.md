@@ -1,5 +1,7 @@
 # TEI-IIIF Converter
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8351776.svg)](https://doi.org/10.5281/zenodo.8351776)
+
 ## Introduction
 TEI-IIIF turns angle brackets into curly brackets. 
 
